@@ -1,4 +1,5 @@
-FROM alpine:3.4
+FROM container4armhf/armhf-alpine:3.4
+COPY qemu-arm-static /usr/bin/qemu-arm-static
 RUN apk --no-cache add alpine-sdk coreutils \
   && adduser -G abuild -g "Alpine Package Builder" -s /bin/ash -D builder \
   && echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
